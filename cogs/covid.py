@@ -84,14 +84,14 @@ class Covid(commands.Cog):
         else:
             data = self.state_catche[state.upper()]
             embed = discord.Embed()
-            embed.title = data['state']
+            embed.title = f'📊 {data["state"]}'
             embed.color = 0x00FF00
             embed.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
-            embed.add_field(name="Active", value=data['active'], inline=False)
-            embed.add_field(name='Confirmed', value=data['confirmed'],inline=False)
-            embed.add_field(name='Deaths', value=data['deaths'], inline=False)
-            embed.add_field(name='Recovered', value=data['recovered'], inline=False)
-            embed.add_field(name='Last Updated Time', value=data['lastupdatedtime'], inline=False)
+            embed.add_field(name="🦠 Active", value=data['active'], inline=False)
+            embed.add_field(name='😷 Confirmed', value=data['confirmed'],inline=False)
+            embed.add_field(name='☠️ Deaths', value=data['deaths'], inline=False)
+            embed.add_field(name='✅ Recovered', value=data['recovered'], inline=False)
+            embed.add_field(name='🕐 Last Updated Time', value=data['lastupdatedtime'], inline=False)
             embed.set_thumbnail(url=self.bot.user.avatar_url)
             embed.set_footer(text=data['statenotes'] if len(data['statenotes'])>0 else None)
 
