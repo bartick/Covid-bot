@@ -6,13 +6,15 @@ import time
 
 load_dotenv()
 
-def get_prefix(bot, message):
-    if message.content.split()[0][1:] == 'state':
-        return '?'
-    else:
-        return ['B.','b.']
 
-bot = commands.Bot(command_prefix=get_prefix, help_command=None, activity=discord.Game(name='For covid data \n?state [state code]'))
+intents = discord.Intents(
+    guilds=True,
+    members=True,
+    messages=True,
+    reactions=True
+)
+
+bot = commands.Bot(command_prefix='?', help_command=None, activity=discord.Game(name='For covid data \n?state [state code]'))
 
 for file in os.listdir('cogs'):
     if file.endswith('.py'):
