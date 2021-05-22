@@ -14,7 +14,7 @@ intents = discord.Intents(
     reactions=True
 )
 
-bot = commands.Bot(command_prefix='?', help_command=None, activity=discord.Game(name='For covid data \n?state [state code]'))
+bot = commands.Bot(command_prefix=',', help_command=None, activity=discord.Game(name='For covid data \n?state [state code]'))
 
 for file in os.listdir('cogs'):
     if file.endswith('.py'):
